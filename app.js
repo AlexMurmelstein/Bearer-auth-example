@@ -45,6 +45,7 @@ app.post("/login", function(req, res){
         }else if (foundUser){
           jwt.sign({foundUser}, Secret, {expiresIn: "5s"}, function (err, token){
             localStorage.set("token", JSON.stringify(token))
+            //Redirecting to protected path, to save time;
             res.redirect("/auth");
           })
         }else {

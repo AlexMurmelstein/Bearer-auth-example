@@ -1,0 +1,15 @@
+////#Inserting two new users to the DB, very crude; Would have rather used a /register path, but it was not mentioned in the instructions
+////#Uncomment the lines below to insert them
+// const UserNo1 = new User({
+//   name: "Anonymous",
+//   email: "anonym@gmail.com",
+// });
+
+// UserNo1.save()
+
+// const UserNo2 = new User({
+//   name: "somewhere",
+//   email: "smw@gmail.com",
+// });
+
+// UserNo2.save();

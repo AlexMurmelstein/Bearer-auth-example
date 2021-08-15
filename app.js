@@ -3,6 +3,7 @@
 ////Set-up, require modules; 
 
 const express = require("express");
+const cors = require ('cors')
 const bodyParser = require("body-parser");
 const jwt = require("jsonwebtoken");
 const localStorage=require('local-storage')
@@ -13,7 +14,7 @@ const User=require("./mongoose.js")
 const authorize=require("./authorize.js")
 
 const app = express();
-
+app.use(cors())
 app.use(
   bodyParser.urlencoded({
     extended: true,
@@ -38,6 +39,7 @@ app.get("/login", function (req, res) {
 app.post("/login", function(req, res){
   const name = req.body.name;
   const email = req.body.email;
+  console.log(req.headers['header'])
     User.findOne({name: name, email: email},
       function(err, foundUser){
         if (err){
@@ -63,6 +65,6 @@ app.get("/auth", authorize, function (req, res) {
   });
 
 
-app.listen(2145, function () {
-  console.log("Server started on port 2145");
+app.listen(8000, function () {
+  console.log("Server started on port 8000");
 });

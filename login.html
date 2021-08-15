@@ -8,10 +8,13 @@
   </head>
   <body>
     <h1>LOGIN</h1>
-    <form action="/login" method="POST">
+    <form action="http://localhost:8000//login" method="POST">
       <input type="text" name="name" placeholder="NAME" />
       <input type="text" name="email" placeholder="EMAIL" />
-      <button type="submit">SUBMIT</button>
     </form>
+    <button type="submit" onclick = 'sendMessage()'>SUBMIT</button>
+
+    <script src="login.js"></script>
+
   </body>
 </html>
